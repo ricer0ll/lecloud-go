@@ -22,10 +22,8 @@ func main() {
         "bob@gmail.com", 
         "passGoesHere", 
         "accountIdGoesHere")
-    
-	restyClient := resty.New()
 
-	client := lecloud.NewClient(restyClient, credentials, apiKeyGoesHere)
+	client := lecloud.NewClient(credentials, apiKeyGoesHere)
 	fmt.Println(client.GetSecret("secretUuidGoesHere"))
 }
 ```
