@@ -13,7 +13,8 @@ type Client struct {
 	JWT         string
 }
 
-func NewClient(restyClient *resty.Client, credentials *Credentials, apiKey string) *Client {
+func NewClient(credentials *Credentials, apiKey string) *Client {
+	restyClient := resty.New()
 	restyClient.SetHeader("api-key", apiKey)
 
 	client := &Client{
